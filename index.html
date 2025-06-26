@@ -136,24 +136,24 @@
       <div class="columns is-multiline">
         <!-- Row 1 -->
         <div class="column is-one-third">
-          <img src="static/images/image1.gif" alt="Animation 1" style="width:100%; height:auto;" autoplay loop>
+          <img src="static/images/image1.gif" alt="Animation 1" style="width:100%; height:auto;" class="gif-reset" loop>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image3.gif" alt="Animation 2" style="width:100%; height:auto;" autoplay loop>
+          <img src="static/images/image3.gif" alt="Animation 2" style="width:100%; height:auto;" class="gif-reset" loop>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image5.gif" alt="Animation 3" style="width:100%; height:auto;" autoplay loop>
+          <img src="static/images/image5.gif" alt="Animation 3" style="width:100%; height:auto;" class="gif-reset" loop>
         </div>
         
         <!-- Row 2 -->
         <div class="column is-one-third">
-          <img src="static/images/image2.gif" alt="Animation 4" style="width:100%; height:auto;" autoplay loop>
+          <img src="static/images/image2.gif" alt="Animation 4" style="width:100%; height:auto;" class="gif-reset" loop>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image4.gif" alt="Animation 5" style="width:100%; height:auto;" autoplay loop>
+          <img src="static/images/image4.gif" alt="Animation 5" style="width:100%; height:auto;" class="gif-reset" loop>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image6.gif" alt="Animation 6" style="width:100%; height:auto;" autoplay loop>
+          <img src="static/images/image6.gif" alt="Animation 6" style="width:100%; height:auto;" class="gif-reset" loop>
         </div>
       </div>
       
@@ -163,6 +163,38 @@
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 获取所有GIF图片
+  const gifs = document.querySelectorAll('.gif-reset');
+  
+  // 为每个GIF添加重置逻辑
+  gifs.forEach(gif => {
+    // 先隐藏GIF
+    gif.style.visibility = 'hidden';
+    
+    // 当GIF加载完成后
+    gif.onload = function() {
+      // 显示GIF
+      this.style.visibility = 'visible';
+      
+      // 强制重置GIF播放
+      const src = this.src;
+      this.src = '';
+      this.src = src;
+      
+      // 确保自动播放
+      this.setAttribute('autoplay', '');
+    };
+    
+    // 如果GIF已经缓存，可能不会触发onload
+    if (gif.complete) {
+      gif.onload();
+    }
+  });
+});
+</script>
 <!-- End GIF Grid Section -->
 
 <!-- Paper abstract -->
