@@ -136,24 +136,36 @@
       <div class="columns is-multiline">
         <!-- Row 1 -->
         <div class="column is-one-third">
-          <img src="static/images/image1.gif" alt="Animation 1" style="width:100%; height:auto;" class="gif-reset" loop>
+          <video autoplay loop muted playsinline style="width:100%; height:auto;" class="gif-reset">
+            <source src="static/images/image1.gif" type="image/gif">
+          </video>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image3.gif" alt="Animation 2" style="width:100%; height:auto;" class="gif-reset" loop>
+          <video autoplay loop muted playsinline style="width:100%; height:auto;" class="gif-reset">
+            <source src="static/images/image3.gif" type="image/gif">
+          </video>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image5.gif" alt="Animation 3" style="width:100%; height:auto;" class="gif-reset" loop>
+          <video autoplay loop muted playsinline style="width:100%; height:auto;" class="gif-reset">
+            <source src="static/images/image5.gif" type="image/gif">
+          </video>
         </div>
         
         <!-- Row 2 -->
         <div class="column is-one-third">
-          <img src="static/images/image2.gif" alt="Animation 4" style="width:100%; height:auto;" class="gif-reset" loop>
+          <video autoplay loop muted playsinline style="width:100%; height:auto;" class="gif-reset">
+            <source src="static/images/image2.gif" type="image/gif">
+          </video>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image4.gif" alt="Animation 5" style="width:100%; height:auto;" class="gif-reset" loop>
+          <video autoplay loop muted playsinline style="width:100%; height:auto;" class="gif-reset">
+            <source src="static/images/image4.gif" type="image/gif">
+          </video>
         </div>
         <div class="column is-one-third">
-          <img src="static/images/image6.gif" alt="Animation 6" style="width:100%; height:auto;" class="gif-reset" loop>
+          <video autoplay loop muted playsinline style="width:100%; height:auto;" class="gif-reset">
+            <source src="static/images/image6.gif" type="image/gif">
+          </video>
         </div>
       </div>
       
@@ -166,28 +178,12 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const gifs = document.querySelectorAll('.gif-reset');
-  
-  gifs.forEach(gif => {
-    gif.style.visibility = 'hidden';
-    
-    gif.onload = function() {
-      this.style.visibility = 'visible';
-      
-      const src = this.src;
-      this.src = '';
-      this.src = src;
-      
-      this.setAttribute('autoplay', '');
-    };
-    
-    if (gif.complete) {
-      gif.onload();
-    }
+  const videos = document.querySelectorAll('.gif-reset');
+  videos.forEach(video => {
+    video.style.visibility = 'visible'; 
   });
 });
 </script>
-<!-- End GIF Grid Section -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
