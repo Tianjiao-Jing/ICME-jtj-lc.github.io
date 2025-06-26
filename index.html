@@ -210,7 +210,7 @@ window.addEventListener('DOMContentLoaded', syncGifs);
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <p>Our approach addresses dynamic depth estimation through a novel framework that combines explicit 3D scene flow regularization with intra-relation feature fusion. The system consists of two main components: a Dual Cross-Cue Fusion (D-CCF) module for depth prediction and a 3D scene flow estimation network that provides spatio-temporal constraints.</p>
+          
           
           <div class="columns is-centered">
             <div class="column">
@@ -224,11 +224,18 @@ window.addEventListener('DOMContentLoaded', syncGifs);
           <div class="columns is-centered">
             <div class="column">
               <img src="static/images/3D.png" alt="Fusion Module Details" style="width:100%">
-              <p class="has-text-centered"><small>Figure 2: Detailed architecture of our Dual Cross-Cue Fusion module, illustrating the information flow between different feature representations.</small></p>
+              <p class="has-text-centered"><small>Figure 2: The pipeline of 3D scene flow estimation, which contains two main modules including a flow guided superpoint generation and superpoint guided
+flow refinement optimization..</small></p>
             </div>
           </div>
           
-          <p>This dual-branch design allows our model to leverage both implicit feature learning and explicit geometric constraints, resulting in improved accuracy for both static and dynamic scene elements while maintaining temporal coherence.</p>
+          <p>To more effectively handle dynamic regions, We leverage
+an iterative end-to-end framework for scene flow estimation
+based on superpoints, where the superpoints are adaptively
+updated to enhance point-level flow prediction. As shown in
+Fig. 1, the proposed framework comprises two main modules:
+a flow guided superpoint generation module and a superpoint
+guided flow refinement optimization module.</p>
         </div>
       </div>
     </div>
