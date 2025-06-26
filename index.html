@@ -219,7 +219,7 @@ window.addEventListener('DOMContentLoaded', syncGifs);
             </div>
           </div>
           
-          <p>For a set of image sequences $\mathcal{I} = \{I_1,I_2,...,I_N\}$ with given or estimated camera poses $\mathcal{T} = \{T_1,T_2,...,T_N\}$, our approach aims at predicting $I_t$'s depth map $D_t$ by considering the intra-relation feature fusion of consecutive frames $\{I_{t-1},I_t\}$. As shown in Figure 1, we build up a depth prediction network with a Dual Cross-Cue Fusion module. To achieve high quality feature fusion for D-CCF, we lift the depth $D_t$ to 3D and perform a 3D scene flow estimation (Sec.~\ref{sec:B}) to predict the 3D motion corresponding cues between $\{I_{t-1},T_t\}$. By jointly unsupervised learning both the depth prediction and 3D scene flow estimation, we boost up the feature fusion quality and obtain high accurate depth prediction. </p>
+          <p>For a set of image sequences $\mathcal{I} = \{I_1,I_2,...,I_N\}$ with given or estimated camera poses $\mathcal{T} = \{T_1,T_2,...,T_N\}$, our approach aims at predicting $I_t$'s depth map $D_t$ by considering the intra-relation feature fusion of consecutive frames $\{I_{t-1},I_t\}$. As shown in Figure 1, we build up a depth prediction network with a Dual Cross-Cue Fusion module. To achieve high quality feature fusion for D-CCF, we lift the depth $D_t$ to 3D and perform a 3D scene flow estimation to predict the 3D motion corresponding cues between $\{I_{t-1},T_t\}$. By jointly unsupervised learning both the depth prediction and 3D scene flow estimation, we boost up the feature fusion quality and obtain high accurate depth prediction. </p>
           
           <div class="columns is-centered">
             <div class="column">
@@ -233,7 +233,7 @@ flow refinement optimization..</small></p>
 an iterative end-to-end framework for scene flow estimation
 based on superpoints, where the superpoints are adaptively
 updated to enhance point-level flow prediction. As shown in
-Fig. 1, the proposed framework comprises two main modules:
+Figure 2 , the proposed framework comprises two main modules:
 a flow guided superpoint generation module and a superpoint
 guided flow refinement optimization module.</p>
         </div>
