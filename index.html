@@ -213,27 +213,25 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
+          <p>Our approach addresses dynamic depth estimation through a novel framework that combines explicit 3D scene flow regularization with intra-relation feature fusion. The system consists of two main components: a Dual Cross-Cue Fusion (D-CCF) module for depth prediction and a 3D scene flow estimation network that provides spatio-temporal constraints.</p>
           
-          <!-- Framework Diagram -->
-          <h3 class="title is-4">Dual Cross-Cue Fusion Architecture</h3>
-          <p>
-            Our framework consists of two synergistic components: (1) the D-CCF module for multi-frame feature fusion and depth prediction, and (2) the 3D scene flow estimation module that provides explicit spatio-temporal regularization. The system takes consecutive video frames as input and outputs consistent depth maps while handling dynamic objects.
-          </p>
+          <div class="columns is-centered">
+            <div class="column">
+              <img src="method_framework.pdf" alt="Framework Overview" style="width:100%">
+              <p class="has-text-centered"><small>Figure 1: The overall framework of our approach, showing the dual-branch architecture with mutual regularization between depth prediction and 3D scene flow estimation.</small></p>
+            </div>
+          </div>
           
+          <p>The D-CCF module processes multi-view inputs through cross-attention mechanisms to capture both spatial and temporal dependencies, while the 3D scene flow branch establishes explicit correspondences across frames. These components are jointly optimized in an unsupervised manner to maintain consistency in dynamic regions.</p>
           
-          <!-- Technical Details -->
-          <h3 class="title is-4">Key Technical Innovations</h3>
-          <p>
-            The <strong>D-CCF module</strong> creates multi-frame cost volumes by warping consecutive frames bidirectionally (Eq.1), then fuses them through cross-cue attention. This produces features that preserve both geometric details and temporal coherence. Simultaneously, our <strong>3D scene flow estimation</strong> lifts predicted depth to point clouds and computes superpoint-level flows (Sec. II-B), which are used to regularize depth predictions through joint learning (Eq.3).
-          </p>
-          d</sub> and flow warping loss L<sub>f</sub> with adaptive weights λ<sub>d</sub> and λ<sub>f</sub>.">
+          <div class="columns is-centered">
+            <div class="column">
+              <img src="fusion_module.png" alt="Fusion Module Details" style="width:100%">
+              <p class="has-text-centered"><small>Figure 2: Detailed architecture of our Dual Cross-Cue Fusion module, illustrating the information flow between different feature representations.</small></p>
+            </div>
+          </div>
           
-          <!-- Performance Summary -->
-          <h3 class="title is-4">Unsupervised Learning Advantage</h3>
-          <p>
-            The entire system is trained end-to-end without ground truth depth supervision. Our ablation studies (Table III) demonstrate that both components contribute significantly to final accuracy - the D-CCF module achieves 0.036 AbsRel error on KITTI, while 3D flow regularization provides 12% additional improvement in dynamic regions. The joint learning framework maintains real-time efficiency (210ms/frame) with minimal memory overhead (0.2GB).
-          </p>
-          
+          <p>This dual-branch design allows our model to leverage both implicit feature learning and explicit geometric constraints, resulting in improved accuracy for both static and dynamic scene elements while maintaining temporal coherence.</p>
         </div>
       </div>
     </div>
