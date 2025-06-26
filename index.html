@@ -166,29 +166,21 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 获取所有GIF图片
   const gifs = document.querySelectorAll('.gif-reset');
   
-  // 为每个GIF添加重置逻辑
   gifs.forEach(gif => {
-    // 先隐藏GIF
     gif.style.visibility = 'hidden';
     
-    // 当GIF加载完成后
     gif.onload = function() {
-      // 显示GIF
       this.style.visibility = 'visible';
       
-      // 强制重置GIF播放
       const src = this.src;
       this.src = '';
       this.src = src;
       
-      // 确保自动播放
       this.setAttribute('autoplay', '');
     };
     
-    // 如果GIF已经缓存，可能不会触发onload
     if (gif.complete) {
       gif.onload();
     }
