@@ -429,6 +429,70 @@ guided flow refinement optimization module.</p>
   </div>
 </section>
 
+<!-- Visualization Results Section -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Visualization Results</h2>
+        <div class="content has-text-justified">
+          
+          <!-- KITTI Results -->
+          <h3 class="title is-4 has-text-centered">KITTI Dataset Comparisons</h3>
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="columns is-centered">
+                <div class="column is-one-third">
+                  <img src="static/images/kitti_1.png" alt="KITTI Example 1" style="width:100%">
+                  <p class="has-text-centered"><small>Figure 3: Urban scene comparison (Left: Input, Middle: Baseline, Right: Ours)</small></p>
+                </div>
+                <div class="column is-one-third">
+                  <img src="static/images/kitti_2.png" alt="KITTI Example 2" style="width:100%">
+                  <p class="has-text-centered"><small>Figure 4: Highway dynamic objects (Left: Input, Middle: Baseline, Right: Ours)</small></p>
+                </div>
+                <div class="column is-one-third">
+                  <img src="static/images/kitti_3.png" alt="KITTI Example 3" style="width:100%">
+                  <p class="has-text-centered"><small>Figure 5: Complex intersection (Left: Input, Middle: Baseline, Right: Ours)</small></p>
+                </div>
+              </div>
+              <p>Our method demonstrates superior performance on KITTI benchmark across various scenarios. Particularly in dynamic object handling (Figure 4) and complex urban environments (Figure 5), the proposed D-CCF module maintains better spatial consistency while preserving fine details compared to baseline methods.</p>
+            </div>
+          </div>
+          
+          <!-- DDAD Results -->
+          <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">DDAD Dataset Comparisons</h3>
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="columns is-centered">
+                <div class="column is-one-third">
+                  <img src="static/images/ddad_1.png" alt="DDAD Example 1" style="width:100%">
+                  <p class="has-text-centered"><small>Figure 6: Low-light urban scene (Left: Input, Middle: Baseline, Right: Ours)</small></p>
+                </div>
+                <div class="column is-one-third">
+                  <img src="static/images/ddad_2.png" alt="DDAD Example 2" style="width:100%">
+                  <p class="has-text-centered"><small>Figure 7: Dense traffic scenario (Left: Input, Middle: Baseline, Right: Ours)</small></p>
+                </div>
+                <div class="column is-one-third">
+                  <img src="static/images/ddad_3.png" alt="DDAD Example 3" style="width:100%">
+                  <p class="has-text-centered"><small>Figure 8: Adverse weather conditions (Left: Input, Middle: Baseline, Right: Ours)</small></p>
+                </div>
+              </div>
+              <p>On the more challenging DDAD dataset, our approach shows remarkable robustness in difficult conditions (Figures 6-8). The 3D scene flow regularization effectively handles the complex dynamic objects in dense traffic (Figure 7) and maintains depth consistency under adverse weather (Figure 8), where baseline methods typically fail.</p>
+            </div>
+          </div>
+          
+          <div class="columns is-centered">
+            <div class="column">
+              <p style="margin-top: 1rem;">The visual comparisons demonstrate our method's consistent advantages in both static and dynamic scenarios across different datasets. The explicit 3D motion modeling enables more accurate depth prediction around moving objects while preserving geometric details in complex environments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Visualization Results Section -->
+
 <!-- Load MathJax for rendering equations -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
